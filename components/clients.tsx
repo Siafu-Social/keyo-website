@@ -37,14 +37,17 @@ export function Clients() {
     return () => observer.disconnect()
   }, [])
 
+  const isPausedRef = useRef(false)
+
   useEffect(() => {
     const scrollContainer = scrollRef.current
     if (!scrollContainer) return
 
-    let scrollPosition = 0
+    let scrollPosition = scrollContainer.scrollLeft
     const scrollSpeed = 1
 
     const scroll = () => {
+      if (isPausedRef.current) return
       scrollPosition += scrollSpeed
       if (scrollPosition >= scrollContainer.scrollWidth / 2) {
         scrollPosition = 0
@@ -66,7 +69,13 @@ export function Clients() {
         </div>
 
         <div className="relative">
-          <div ref={scrollRef} className="flex gap-8 overflow-x-hidden" style={{ scrollBehavior: "auto" }}>
+          <div
+            ref={scrollRef}
+            className="flex gap-8 overflow-x-hidden"
+            style={{ scrollBehavior: "auto" }}
+            onMouseEnter={() => (isPausedRef.current = true)}
+            onMouseLeave={() => (isPausedRef.current = false)}
+          >
             {[...clients, ...clients].map((client, index) => (
               <div
                 key={index}
