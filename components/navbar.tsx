@@ -43,11 +43,14 @@ export function Navbar() {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="transition-transform hover:scale-105">
+          <Link
+            href="/"
+            className="transition-transform hover:scale-105 bg-white rounded-lg p-1.5 shadow-sm"
+          >
             <Image
-              src="/logos/logo2.jpeg"
+              src="/logos/NewLogo.png"
               alt="Keyo Limited"
-              width={120}
+              width={180}
               height={120}
               className="h-12 sm:h-14 md:h-16 w-auto object-contain"
               priority
@@ -96,6 +99,9 @@ export function Navbar() {
             </Link>
             <Link href="/#portfolio" className="text-gray-700 hover:text-[#4A8DFB] transition-colors font-medium">
               Portfolio
+            </Link>
+            <Link href="/careers" className="text-gray-700 hover:text-[#4A8DFB] transition-colors font-medium">
+              Careers
             </Link>
             <Link href="/#contact" className="text-gray-700 hover:text-[#4A8DFB] transition-colors font-medium">
               Contact Keyo
@@ -176,6 +182,12 @@ export function Navbar() {
               className="px-6 py-3 text-gray-700 hover:bg-[#F8FBFF] hover:text-[#4A8DFB] transition-colors rounded-lg"
             >
               Portfolio
+            </Link>
+            <Link
+              href="/careers"
+              className="px-6 py-3 text-gray-700 hover:bg-[#F8FBFF] hover:text-[#4A8DFB] transition-colors rounded-lg"
+            >
+              Careers
             </Link>
             <Link
               href="/#contact"

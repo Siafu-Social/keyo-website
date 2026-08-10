@@ -12,11 +12,11 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div>
-            <div className="mb-4">
+            <div className="mb-4 inline-block bg-white rounded-xl p-3">
               <Image
-                src="/logos/logo2.jpeg"
+                src="/logos/NewLogo.png"
                 alt="Keyo Limited"
-                width={120}
+                width={180}
                 height={120}
                 className="h-16 sm:h-20 w-auto object-contain"
               />
@@ -54,7 +54,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-[#DDE7F6] hover:text-white transition-colors">
+                <Link href="/careers" className="text-[#DDE7F6] hover:text-white transition-colors">
                   Careers
                 </Link>
               </li>

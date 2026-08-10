@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Manrope } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { JobAlertBubble } from "@/components/job-alert-bubble"
 import "./globals.css"
 
 const manrope = Manrope({ subsets: ["latin"] })
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${manrope.className} font-sans antialiased`}>
         {children}
+        <JobAlertBubble />
         <Analytics />
       </body>
     </html>
