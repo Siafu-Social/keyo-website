@@ -9,7 +9,7 @@ Last updated: [SET DATE]
 
 ## 1. Introduction
 
-Keyo Limited ("Keyo", "we", "us", or "our") is a software development company based in Nairobi, Kenya. We build, launch, and maintain web, mobile, and enterprise applications for startups and established businesses.
+Keyo Limited is a software development company based in Nairobi, Kenya. We build, launch, and maintain web, mobile, and enterprise applications for startups and established businesses.
 
 We take the protection of personal data seriously. This policy explains how we handle personal data, both the data we collect directly through our own website and business operations, and the data we handle on behalf of our clients when we build and run software for them.
 
