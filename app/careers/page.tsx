@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -77,9 +78,63 @@ const perks = [
   { icon: Users, label: "Be Part of a Winning Team" },
 ]
 
+const title = "Careers"
+const description = "Keyo Ltd is hiring: Store Manager and Sales Agent roles now open in Nairobi. Apply online today."
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/careers" },
+  openGraph: { title, description },
+  twitter: { title, description },
+}
+
+const jobPostingsJsonLd = jobs.map((job) => ({
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  title: `${job.title} (${job.subtitle})`,
+  description: `<p>${[...job.duties].join(" ")}</p><p>Requirements: ${job.requirements.join(", ")}.</p>`,
+  identifier: {
+    "@type": "PropertyValue",
+    name: "Keyo Ltd",
+    value: job.slug,
+  },
+  datePosted: "2026-08-20",
+  employmentType: "OTHER",
+  hiringOrganization: {
+    "@type": "Organization",
+    name: "Keyo Ltd",
+    sameAs: "https://www.keyo.co.ke",
+  },
+  jobLocation: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Nairobi",
+      addressCountry: "KE",
+    },
+  },
+  baseSalary: {
+    "@type": "MonetaryAmount",
+    currency: "KES",
+    value: {
+      "@type": "QuantitativeValue",
+      value: Number(job.pay.replace(/[^0-9]/g, "")),
+      unitText: "MONTH",
+    },
+  },
+}))
+
 export default function CareersPage() {
   return (
     <main className="min-h-screen">
+      {jobPostingsJsonLd.map((jobPosting) => (
+        <script
+          key={jobPosting.identifier.value}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPosting) }}
+        />
+      ))}
       <Navbar />
 
       <div className="pt-32 pb-24 bg-gradient-to-br from-[#5A8DEE] to-[#F8FBFF]">

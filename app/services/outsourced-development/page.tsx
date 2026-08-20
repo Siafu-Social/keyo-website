@@ -1,8 +1,21 @@
+import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Users, Clock, DollarSign, Award } from "lucide-react"
+
+const title = "Outsourced Development"
+const description =
+  "Dedicated development teams from Keyo Limited that integrate with your in-house team to extend your capacity without the overhead of hiring."
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/services/outsourced-development" },
+  openGraph: { title, description },
+  twitter: { title, description },
+}
 
 export default function OutsourcedDevelopmentPage() {
   return (

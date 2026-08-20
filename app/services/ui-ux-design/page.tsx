@@ -1,8 +1,21 @@
+import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Palette, Eye, Heart, Sparkles } from "lucide-react"
+
+const title = "UI/UX & Product Design"
+const description =
+  "User-centered UI/UX design from Keyo Limited that turns complex products into intuitive, delightful experiences people want to use."
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/services/ui-ux-design" },
+  openGraph: { title, description },
+  twitter: { title, description },
+}
 
 export default function UiUxDesignPage() {
   return (

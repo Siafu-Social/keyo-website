@@ -1,8 +1,21 @@
+import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Lightbulb, Rocket, Target, Repeat } from "lucide-react"
+
+const title = "Innovation & Product Acceleration"
+const description =
+  "Rapid prototyping and MVP development from Keyo Limited to validate ideas fast and take new products from concept to market."
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/services/innovation" },
+  openGraph: { title, description },
+  twitter: { title, description },
+}
 
 export default function InnovationPage() {
   return (

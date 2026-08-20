@@ -1,7 +1,19 @@
+import type { Metadata } from "next"
 import { Suspense } from "react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { CareersApplyForm } from "@/components/careers-apply-form"
+
+const title = "Apply Now"
+const description = "Submit your application for a role at Keyo Ltd. Upload your CV and we'll be in touch if you're shortlisted."
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/careers/apply" },
+  openGraph: { title, description },
+  twitter: { title, description },
+}
 
 export default function CareersApplyPage() {
   return (

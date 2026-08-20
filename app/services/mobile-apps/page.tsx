@@ -1,8 +1,21 @@
+import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Smartphone, Tablet, Watch, Zap } from "lucide-react"
+
+const title = "Mobile App Development"
+const description =
+  "Native and cross-platform mobile applications for iOS and Android, designed to be beautiful, intuitive, and built by Keyo Limited."
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/services/mobile-apps" },
+  openGraph: { title, description },
+  twitter: { title, description },
+}
 
 export default function MobileAppsPage() {
   return (

@@ -3,10 +3,16 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
+const title = "Privacy & Data Protection Policy"
+const description =
+  "How Keyo Limited collects, uses, and protects personal data under Kenya's Data Protection Act, 2019."
+
 export const metadata: Metadata = {
-  title: "Privacy & Data Protection Policy | Keyo Limited",
-  description:
-    "How Keyo Limited collects, uses, and protects personal data under Kenya's Data Protection Act, 2019.",
+  title,
+  description,
+  alternates: { canonical: "/privacy" },
+  openGraph: { title, description },
+  twitter: { title, description },
 }
 
 const triggerClassName =
@@ -394,8 +400,8 @@ export default function PrivacyPolicyPage() {
                   </ul>
                   <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                     For personal data where Keyo is the controller, you can exercise these rights by contacting us
-                    using the details in Section 19. For personal data held inside a client's system, please
-                    direct your request to that client, as explained in Section 13.
+                    using the contact details published on our website. For personal data held inside a client's
+                    system, please direct your request to that client, as explained in Section 13.
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     We will respond to valid requests within the timelines set by the Act. We may need to verify
@@ -444,41 +450,7 @@ export default function PrivacyPolicyPage() {
               </AccordionItem>
 
               <AccordionItem value="section-18" className={itemClassName}>
-                <AccordionTrigger className={triggerClassName}>18. Children's data</AccordionTrigger>
-                <AccordionContent className={contentClassName}>
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    Our website is not directed at children, and we do not knowingly collect personal data from
-                    children through it. Where a client's system processes children's data, that processing is
-                    governed by the client's instructions and the additional protections required by the Act.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="section-19" className={itemClassName}>
-                <AccordionTrigger className={triggerClassName}>19. Contact us</AccordionTrigger>
-                <AccordionContent className={contentClassName}>
-                  <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                    If you have any questions about this policy, or wish to exercise your rights in relation to
-                    personal data for which Keyo is the controller, please contact us:
-                  </p>
-                  <div className="bg-[#F8FBFF] rounded-xl p-6">
-                    <p className="text-lg text-gray-900 font-bold mb-1">Keyo Limited</p>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      Mogadishu Road, Industrial Area, Nairobi, Kenya
-                    </p>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      Email:{" "}
-                      <a href="mailto:info@keyo.co.ke" className="text-[#4A8DFB] hover:underline">
-                        info@keyo.co.ke
-                      </a>
-                    </p>
-                    <p className="text-lg text-gray-700 leading-relaxed">Phone: +254 720 204403 / +254 796 283374</p>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="section-20" className={itemClassName}>
-                <AccordionTrigger className={triggerClassName}>20. Complaints to the regulator</AccordionTrigger>
+                <AccordionTrigger className={triggerClassName}>18. Complaints to the regulator</AccordionTrigger>
                 <AccordionContent className={contentClassName}>
                   <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                     If you believe we have not handled your personal data in accordance with the Act, you have the
@@ -506,8 +478,8 @@ export default function PrivacyPolicyPage() {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="section-21" className="border-b-0">
-                <AccordionTrigger className={triggerClassName}>21. Changes to this policy</AccordionTrigger>
+              <AccordionItem value="section-19" className="border-b-0">
+                <AccordionTrigger className={triggerClassName}>19. Changes to this policy</AccordionTrigger>
                 <AccordionContent className={contentClassName}>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     We may update this policy from time to time to reflect changes in our practices or in the law.

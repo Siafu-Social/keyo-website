@@ -1,8 +1,21 @@
+import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Code, Zap, Shield, Users } from "lucide-react"
+
+const title = "Web Applications Development"
+const description =
+  "Custom, scalable web applications built with modern frameworks and best practices — from concept to deployment with Keyo Limited."
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/services/web-applications" },
+  openGraph: { title, description },
+  twitter: { title, description },
+}
 
 export default function WebApplicationsPage() {
   return (

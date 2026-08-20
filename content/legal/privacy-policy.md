@@ -130,7 +130,7 @@ Under Section 26 of the Act, you have the right to:
 - Have inaccurate or misleading personal data corrected.
 - Have false or misleading personal data about you deleted.
 
-For personal data where Keyo is the controller, you can exercise these rights by contacting us using the details in Section 19. For personal data held inside a client's system, please direct your request to that client, as explained in Section 13.
+For personal data where Keyo is the controller, you can exercise these rights by contacting us using the contact details published on our website. For personal data held inside a client's system, please direct your request to that client, as explained in Section 13.
 
 We will respond to valid requests within the timelines set by the Act. We may need to verify your identity before acting on a request.
 
@@ -146,20 +146,7 @@ We maintain procedures for identifying and responding to personal data breaches.
 
 Keyo's operations and clients are based in Kenya. Where any personal data is stored or processed outside Kenya, for example through a cloud service provider, we will ensure that the transfer meets the conditions of the Act, including that the receiving party is subject to appropriate data protection safeguards, or that another lawful basis for the transfer applies.
 
-## 18. Children's data
-
-Our website is not directed at children, and we do not knowingly collect personal data from children through it. Where a client's system processes children's data, that processing is governed by the client's instructions and the additional protections required by the Act.
-
-## 19. Contact us
-
-If you have any questions about this policy, or wish to exercise your rights in relation to personal data for which Keyo is the controller, please contact us:
-
-**Keyo Limited**
-Mogadishu Road, Industrial Area, Nairobi, Kenya
-Email: info@keyo.co.ke
-Phone: +254 720 204403 / +254 796 283374
-
-## 20. Complaints to the regulator
+## 18. Complaints to the regulator
 
 If you believe we have not handled your personal data in accordance with the Act, you have the right to lodge a complaint with the Office of the Data Protection Commissioner:
 
@@ -168,6 +155,6 @@ Website: www.odpc.go.ke
 
 We would, however, appreciate the chance to address your concern directly before you do so.
 
-## 21. Changes to this policy
+## 19. Changes to this policy
 
 We may update this policy from time to time to reflect changes in our practices or in the law. The current version is always available on our website, and the "Last updated" date at the top shows when it was most recently revised.

@@ -1,8 +1,21 @@
+import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Database, TrendingUp, Users, Settings } from "lucide-react"
+
+const title = "CRM & ERP Solutions"
+const description =
+  "Custom CRM and ERP systems from Keyo Limited that replace scattered spreadsheets with organized, scalable business operations."
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/services/crm-erp" },
+  openGraph: { title, description },
+  twitter: { title, description },
+}
 
 export default function CrmErpPage() {
   return (
