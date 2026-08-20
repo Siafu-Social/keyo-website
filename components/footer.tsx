@@ -63,6 +63,11 @@ export function Footer() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link href="/privacy" className="text-[#DDE7F6] hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -100,8 +105,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 text-center text-[#DDE7F6]">
+        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center text-[#DDE7F6]">
           <p>© 2025 Keyo Limited. All rights reserved.</p>
+          <span className="hidden sm:inline">·</span>
+          <Link href="/privacy" className="hover:text-white transition-colors">
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>
