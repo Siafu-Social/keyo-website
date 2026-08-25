@@ -63,7 +63,7 @@ export function Hero() {
             <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-3xl mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-[#4A8DFB] mb-2">50+</div>
+                  <div className="text-4xl font-bold text-[#4A8DFB] mb-2">15+</div>
                   <div className="text-[#A0AEC0]">Projects Delivered</div>
                 </div>
                 <div className="text-center">
