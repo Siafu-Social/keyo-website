@@ -71,7 +71,7 @@ export function Hero() {
                   <div className="text-[#A0AEC0]">Happy Clients</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-[#4A8DFB] mb-2">100%</div>
+                  <div className="text-4xl font-bold text-[#4A8DFB] mb-2">99.9%</div>
                   <div className="text-[#A0AEC0]">Client Satisfaction</div>
                 </div>
               </div>
