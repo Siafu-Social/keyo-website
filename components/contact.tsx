@@ -15,7 +15,7 @@ export function Contact() {
     message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "fallback" | "error">("idle")
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,8 +65,21 @@ export function Contact() {
       setSubmitStatus("success")
       setFormData({ name: "", email: "", message: "" })
     } catch (error) {
-      console.error("Error sending message:", error)
-      setSubmitStatus("error")
+      console.error("Primary delivery failed, falling back to mailto:", error)
+
+      try {
+        const subject = encodeURIComponent(`Contact Form: Message from ${formData.name}`)
+        const body = encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
+        )
+        window.location.href = `mailto:info@keyo.co.ke?subject=${subject}&body=${body}`
+
+        setSubmitStatus("fallback")
+        setFormData({ name: "", email: "", message: "" })
+      } catch (fallbackError) {
+        console.error("Fallback mailto also failed:", fallbackError)
+        setSubmitStatus("error")
+      }
     } finally {
       setIsSubmitting(false)
     }
@@ -202,8 +215,15 @@ export function Contact() {
               </Button>
 
               {submitStatus === "success" && <p className="text-green-600 text-center">Message sent successfully!</p>}
+              {submitStatus === "fallback" && (
+                <p className="text-green-600 text-center">
+                  Your email app should now be open with the message ready — just hit send to finish!
+                </p>
+              )}
               {submitStatus === "error" && (
-                <p className="text-red-600 text-center">Failed to send message. Please try again.</p>
+                <p className="text-red-600 text-center">
+                  Failed to send message. Please try again, or email us directly at info@keyo.co.ke.
+                </p>
               )}
             </form>
           </div>
