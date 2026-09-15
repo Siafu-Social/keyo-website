@@ -94,8 +94,10 @@ export function CareersApplyForm() {
         body: payload,
       })
 
-      if (!response.ok) {
-        throw new Error("Submission failed")
+      const data = await response.json().catch(() => null)
+
+      if (!response.ok || data?.success !== "true") {
+        throw new Error(data?.message || "Submission failed")
       }
 
       setStatus("success")

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { Briefcase, X } from "lucide-react"
+import { HIRING_OPEN } from "@/lib/hiring-status"
 
 const DISMISS_KEY = "keyo-job-alert-dismissed"
 const SHOW_DELAY_MS = 2500
@@ -13,6 +14,7 @@ export function JobAlertBubble() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
+    if (!HIRING_OPEN) return
     if (pathname?.startsWith("/careers")) return
     if (typeof window === "undefined") return
     if (sessionStorage.getItem(DISMISS_KEY)) return
@@ -21,7 +23,7 @@ export function JobAlertBubble() {
     return () => clearTimeout(timer)
   }, [pathname])
 
-  if (pathname?.startsWith("/careers") || !visible) return null
+  if (!HIRING_OPEN || pathname?.startsWith("/careers") || !visible) return null
 
   const dismiss = () => {
     setVisible(false)

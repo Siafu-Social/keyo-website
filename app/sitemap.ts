@@ -13,8 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/services/innovation", priority: 0.8, changeFrequency: "monthly" },
     { path: "/services/outsourced-development", priority: 0.8, changeFrequency: "monthly" },
     { path: "/services/ui-ux-design", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/careers", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/careers/apply", priority: 0.5, changeFrequency: "monthly" },
+    { path: "/careers", priority: 0.4, changeFrequency: "monthly" },
+    { path: "/careers/apply", priority: 0.2, changeFrequency: "monthly" },
     { path: "/privacy", priority: 0.3, changeFrequency: "yearly" },
   ]
 

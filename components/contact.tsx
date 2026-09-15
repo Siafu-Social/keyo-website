@@ -5,6 +5,8 @@ import type React from "react"
 import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/info@keyo.co.ke"
+
 export function Contact() {
   const sectionRef = useRef<HTMLElement>(null)
   const [formData, setFormData] = useState({
@@ -38,16 +40,27 @@ export function Contact() {
     setIsSubmitting(true)
     setSubmitStatus("idle")
 
-    try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(`Contact Form: Message from ${formData.name}`)
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
-      )
-      const mailtoLink = `mailto:info@keyo.co.ke?subject=${subject}&body=${body}`
+    const payload = new FormData()
+    payload.append("_subject", `Contact Form: Message from ${formData.name}`)
+    payload.append("_template", "table")
+    payload.append("_captcha", "false")
+    payload.append("_honey", "")
+    payload.append("Name", formData.name)
+    payload.append("Email", formData.email)
+    payload.append("Message", formData.message)
 
-      // Open email client
-      window.location.href = mailtoLink
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: payload,
+      })
+
+      const data = await response.json().catch(() => null)
+
+      if (!response.ok || data?.success !== "true") {
+        throw new Error(data?.message || "Submission failed")
+      }
 
       setSubmitStatus("success")
       setFormData({ name: "", email: "", message: "" })
