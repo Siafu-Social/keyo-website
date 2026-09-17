@@ -2,10 +2,13 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Manrope } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import Script from "next/script"
 import { JobAlertBubble } from "@/components/job-alert-bubble"
 import "./globals.css"
 
 const manrope = Manrope({ subsets: ["latin"] })
+
+const GA_MEASUREMENT_ID = "G-1YBRPSZWJ4"
 
 const siteDescription =
   "Keyo Limited is a Nairobi-based software development company helping startups and enterprises build, launch, and scale web, mobile, and enterprise applications faster."
@@ -71,6 +74,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         {children}
         <JobAlertBubble />
         <Analytics />
